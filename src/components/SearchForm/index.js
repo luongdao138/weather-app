@@ -25,7 +25,9 @@ const SearchForm = ({ isOpenSearchForm, closeSearchForm }) => {
   const isStartSearch = useRef(false);
 
   useEffect(() => {
-    inputRef.current.focus();
+    if (isOpenSearchForm) {
+      inputRef.current.focus();
+    }
   }, [isOpenSearchForm]);
 
   const handleSearchLocation = (e) => {
